@@ -1,0 +1,315 @@
+/* Menggunakan keyframes yang sama dari file lain untuk konsistensi */
+@keyframes aurora {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Styling untuk Section Utama */
+.projectsSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8rem 2rem;
+  min-height: 100vh;
+  box-sizing: border-box;
+  scroll-snap-align: start;
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Judul Section, mirip dengan About */
+.title {
+  font-family: var(--font-orbitron);
+  font-size: 3.5rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 4rem;
+  background: linear-gradient(90deg, #38bdf8, #a78bfa, #f472b6, #38bdf8);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: aurora 15s ease infinite;
+}
+
+/* Grid untuk kartu project */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-auto-rows: 200px;
+  gap: 1.5rem;
+}
+
+/* Ukuran kartu yang bervariasi */
+.card.medium {
+  grid-row: span 1;
+  grid-column: span 2;
+}
+
+.card.large {
+  grid-row: span 2;
+  grid-column: span 2;
+}
+
+/* Styling Kartu Project */
+.card {
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+  cursor: pointer;
+  background-color: rgba(23, 31, 49, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cardImage {
+  transition: transform 0.4s ease;
+  object-fit: cover; /* Memastikan gambar menutupi kartu */
+}
+
+.card:hover .cardImage {
+  transform: scale(1.1);
+}
+
+.cardOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%);
+  color: #e5e7eb;
+  transform: translateY(30%);
+  opacity: 0;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.card:hover .cardOverlay {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.cardOverlay h3 {
+  font-family: var(--font-orbitron);
+  font-size: 1.5rem;
+  font-weight: 700; /* Menambahkan ketebalan font */
+  margin: 0 0 0.5rem 0;
+    color: #0e30ee; /* emerald-300 */
+}
+
+.cardOverlay p {
+  font-size: 1rem;
+  margin: 0;
+  color: #7a7cf1;
+}
+
+/* Styling Modal */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background-color: #111827; /* bg-gray-900 */
+  padding: 2.5rem;
+  border-radius: 1rem;
+  max-width: 800px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.closeButton {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: #9ca3af; /* gray-400 */
+  font-size: 2rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.closeButton:hover {
+  color: #fff;
+}
+
+.modalContent h2 {
+  font-family: var(--font-orbitron);
+  font-size: 2.5rem;
+  font-weight: 700; /* Menambahkan ketebalan font */
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  color: #6ee7b7; /* emerald-300 */
+}
+
+.tags {
+  margin-bottom: 1.5rem;
+}
+
+.tags strong {
+  color: #9ca3af; /* gray-400 */
+  margin-right: 1rem;
+}
+
+.tag {
+  display: inline-block;
+  background-color: #374151; /* gray-700 */
+  color: #d1d5db; /* gray-300 */
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.projectDescription {
+  font-size: 1.125rem;
+  line-height: 1.75;
+  white-space: pre-wrap; /* KUNCI: Menghormati spasi dan baris baru */
+  margin-bottom: 1rem;   /* Memberi jarak konsisten antar paragraf */
+  color: #fdfdfd; /* gray-300 */
+}
+
+.modalHeading {
+  font-family: var(--font-orbitron);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #a78bfa; /* violet-400 */
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.modalLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.modalLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.25rem;
+  background-color: #374151; /* gray-700 */
+  color: #e5e7eb; /* gray-200 */
+  border-radius: 9999px; /* rounded-full */
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.modalLink:hover {
+  background-color: #4f46e5; /* indigo-600 */
+  transform: translateY(-2px);
+}
+
+/* Mengganti nama wrapper untuk kejelasan dan menambahkan interaktivitas */
+.modalImageClickableWrapper {
+  margin: 2rem 0;
+  width: 100%;
+  position: relative;
+  cursor: zoom-in; /* Menunjukkan gambar bisa diperbesar */
+  transition: transform 0.2s ease-in-out;
+  border-radius: 0.75rem; /* Pastikan border-radius ada di wrapper */
+  overflow: hidden; /* Sembunyikan bagian gambar yang keluar saat hover */
+}
+
+.modalImageClickableWrapper:hover {
+  transform: scale(1.02); /* Efek hover halus */
+}
+
+.modalImage {
+  border-radius: 0.75rem; /* rounded-xl */
+  object-fit: cover;
+  width: 100%; /* Membuat gambar responsif di dalam wrapper */
+  height: auto;
+}
+
+/* Gaya untuk Modal Gambar yang Diperbesar */
+.enlargedImageOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(15px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000; /* Lebih tinggi dari z-index modal proyek (1000) */
+  cursor: zoom-out;
+}
+
+.enlargedImage {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain; /* Sangat penting agar gambar tidak terpotong */
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+}
+
+.closeEnlargedButton {
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 3rem;
+  cursor: pointer;
+  line-height: 1;
+  text-shadow: 0 0 5px black;
+  z-index: 2001; /* Di atas gambar */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .projectsSection {
+    padding: 6rem 1rem;
+  }
+  .title {
+    font-size: 2.5rem;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 250px;
+  }
+  .card.medium, .card.large {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+  .modalContent {
+    width: 95%;
+    padding: 1.5rem;
+  }
+  .modalContent h2 {
+    font-size: 2rem;
+  }
+}

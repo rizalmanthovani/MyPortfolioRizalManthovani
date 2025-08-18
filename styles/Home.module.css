@@ -1,0 +1,142 @@
+@keyframes aurora {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 6rem 1.5rem 0; /* pt-24, px-6. Padding atas untuk Navbar */
+  box-sizing: border-box; /* Memastikan padding termasuk dalam 100vh */
+  scroll-snap-align: start; /* Menentukan titik snap di awal section */
+}
+
+.title {
+  font-family: var(--font-orbitron);
+  font-size: 3rem; /* text-5xl */
+  line-height: 1;
+  font-weight: 700;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+  /* Efek aurora diterapkan secara default */
+  background: linear-gradient(
+    90deg,
+    #00c6ff,
+    #9c4eff,
+    #ff00c1,
+    #00c6ff
+  );
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: aurora 10s ease infinite;
+}
+
+.title:hover {
+  transform: scale(1.05);
+}
+
+.description {
+  margin-top: 1rem; /* mt-4 */
+  font-size: 1.125rem; /* text-lg */
+  font-weight: 700;
+  line-height: 1.75rem;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+  /* Efek aurora diterapkan secara default */
+  background: linear-gradient(
+    90deg,
+    #a7f3d0, /* mint */
+    #bae6fd, /* sky */
+    #c4b5fd, /* violet */
+    #a7f3d0
+  );
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: aurora 15s ease infinite;
+}
+
+.description:hover {
+  transform: scale(1.02);
+}
+
+.titleWelPort {
+  font-size: 2.5rem; /* Ukuran font untuk kata "Welcome" */
+  font-weight: 600; /* Sedikit lebih tipis dari judul utama */
+  color: #38bdf8,
+         #9c4eff;
+  background: none; /* Hapus efek gradien dari parent */
+  -webkit-background-clip: initial;
+  background-clip: initial;
+  animation: none; /* Hentikan animasi aurora untuk kata ini */
+}
+
+.titleSmall {
+  /* Ukuran font lebih kecil dari parent */
+  font-size: 2rem; 
+  font-weight: 600; /* Sedikit lebih tipis */
+  /* Override efek gradien dari parent */
+  background: none;
+  -webkit-background-clip: initial;
+  background-clip: initial;
+  color: #38bdf8,
+         #9c4eff;
+  animation: none; /* Hentikan animasi aurora untuk kata ini */
+  vertical-align: middle; /* Jaga agar tetap di tengah secara vertikal */
+}
+
+/* Media query untuk browser yang lebih lebar (desktop) */
+@media (min-width: 768px) {
+  .title {
+    font-size: 4.5rem; /* md:text-7xl */  
+  }
+
+  .container {
+    padding: 0 2rem; /* p-8 di desktop */
+  }
+
+.titleWelPort {
+    font-size: 2rem; /* Sesuaikan ukuran font untuk desktop */
+  }
+
+  .titleSmall {
+    font-size: 1rem; /* Sesuaikan juga untuk desktop */
+  }
+}
+
+/* Media query untuk mobile (lebar layar 768px atau kurang) */
+@media (max-width: 768px) {
+  .container {
+    /* Kurangi padding atas di mobile agar sesuai dengan tinggi navbar mobile */
+    padding: 5rem 1rem 0;
+  }
+
+  .title {
+    font-size: 2.5rem; /* Perkecil judul di mobile */
+  }
+
+  .title:hover {
+    transform: none; /* Hilangkan efek scale di mobile untuk performa lebih baik */
+  }
+
+  .description {
+    font-size: 1rem; /* Perkecil deskripsi di mobile */
+  }
+
+  .description:hover {
+    transform: none; /* Hilangkan efek scale di mobile untuk performa lebih baik */
+  }
+}
