@@ -4,7 +4,9 @@ import React from 'react';
 import ContactFormEmail from '@/emails/ContactFormEmail';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
-const toEmail = 'manthovanir24@gmail.com'; // Ganti dengan alamat email yang Anda daftarkan di Resend
+// Gunakan environment variables untuk fleksibilitas dan keamanan
+const toEmail = process.env.RESEND_TO_EMAIL;
+const fromEmail = process.env.RESEND_FROM_EMAIL;
 
 export async function POST(request: Request) {
   try {
@@ -14,8 +16,13 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
     }
 
+    if (!toEmail || !fromEmail) {
+      console.error('Missing RESEND_TO_EMAIL or RESEND_FROM_EMAIL environment variables');
+      return NextResponse.json({ error: 'Server configuration error.' }, { status: 500 });
+    }
+
     const { data, error } = await resend.emails.send({
-      from: 'Portfolio Contact <manthovanir24@gmail.com>', // GANTI DENGAN DOMAIN ANDA
+      from: fromEmail,
       to: [toEmail],
       subject: `Pesan dari ${name} via Portofolio`,
       replyTo: email,
