@@ -15,7 +15,7 @@ export async function POST(request: Request) {
     }
 
     const { data, error } = await resend.emails.send({
-      from: 'Portfolio Contact <contact@your-verified-domain.com>', // GANTI DENGAN DOMAIN ANDA
+      from: 'Portfolio Contact <manthovanir24@gmail.com>', // GANTI DENGAN DOMAIN ANDA
       to: [toEmail],
       subject: `Pesan dari ${name} via Portofolio`,
       replyTo: email,
