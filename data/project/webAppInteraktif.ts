@@ -6,7 +6,7 @@ export const webAppInteraktif: Project = {
   image: '/Web-app-interaktif.png',
   shortDescription: 'a desktop application (built with Electron) designed specifically for TikTok streamers.',
   githubUrl: 'https://github.com/rizalmanthovani/Interaktif_Key',
-  liveUrl: 'https://username.github.io/repo/',
+  liveUrl: 'https://drive.google.com/file/d/1tOkzmEiv7K3ml6xlOksHa7V5biUFzeW8/view?usp=sharing',
   languages: ['JavaScript(ES6+)', 'HTML', 'CSS', 'EJS', 'AutoIt', 'SQL'],
   technologies: ['EJS', 'Node.js', 'Express.js', 'Electron', 'Socket.IO', 'PostgrSQL (via pg)', 'Googleapis', 'tiktoklive-connector', 'Express-session', 'electron-store', 'Choice.js', 'JavaScript Obfuscator'],
   fullDescription: [
