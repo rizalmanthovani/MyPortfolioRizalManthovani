@@ -53,7 +53,7 @@ const About = () => {
                 priority
               />
               <h3 className={styles.cardName}>Rizal Manthovani</h3>
-              <p className={styles.cardTitle}>IA Web Developer</p>
+              <p className={styles.cardTitle}>AI Web Developer</p>
             </div>
           </motion.div>
           <div className={styles.textColumn}>
