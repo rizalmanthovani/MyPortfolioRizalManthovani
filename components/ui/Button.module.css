@@ -1,0 +1,40 @@
+/* components/ui/Button.module.css */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1.2rem;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* Primary – brand color */
+.primary {
+  background: var(--color-primary);
+  color: #fff;
+}
+.primary:hover {
+  background: var(--color-primary-dark);
+}
+
+/* Secondary – neutral */
+.secondary {
+  background: var(--color-secondary);
+  color: #fff;
+}
+.secondary:hover {
+  background: var(--color-secondary-dark);
+}
+
+/* Outline – subtle */
+.outline {
+  background: transparent;
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
+}
+.outline:hover {
+  background: rgba(0, 0, 0, 0.05);
+}

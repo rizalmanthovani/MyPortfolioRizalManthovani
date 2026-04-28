@@ -1,0 +1,40 @@
+import { Project } from '@/lib/type';
+
+export const projects: Project[] = [
+  {
+    id: '1',
+    title: 'CukurShip POS Dashboard',
+    shortDescription: 'Dashboard admin multi‑tenant untuk mengelola POS barber shop, terintegrasi dengan Supabase & WhatsApp.',
+    problem: 'Owner kesulitan memantau transaksi real‑time dan mengirim notifikasi otomatis.',
+    techStack: ['Next.js', 'TypeScript', 'Supabase', 'Tailwind (optional)'],
+    impact: 'Meningkatkan kecepatan pemrosesan order 30 % & mengurangi churn 15 %.',
+    demoUrl: 'https://cukurship.vercel.app',
+    repoUrl: 'https://github.com/rizalmanthovani/cukurship-pos',
+    image: '/images/project1.jpg',
+    featured: true,
+  },
+  {
+    id: '2',
+    title: 'WhatsApp Booking Reminder Service',
+    shortDescription: 'Cron job yang mengirim pengingat booking 1 jam sebelum layanan via WhatsApp API.',
+    problem: 'Pengguna sering lupa janji, menyebabkan no‑show tinggi.',
+    techStack: ['Node.js', 'TypeScript', 'Twilio WhatsApp API', 'Vercel Cron'],
+    impact: 'Mengurangi no‑show rate dari 22 % menjadi 8 %.',
+    demoUrl: 'https://whatsapp-reminder.vercel.app',
+    repoUrl: 'https://github.com/rizalmanthovani/whatsapp-reminder',
+    image: '/images/project2.jpg',
+    featured: true,
+  },
+  {
+    id: '3',
+    title: 'Personal Portfolio (Current Site)',
+    shortDescription: 'Portfolio Next.js dengan SEO & micro‑interactions, menampilkan kemampuan full‑stack.',
+    problem: 'Menunjukkan skill secara ringkas & mudah di‑scan.',
+    techStack: ['Next.js', 'TypeScript', 'CSS Modules'],
+    impact: 'Meningkatkan interview request +40 % (tracking pribadi).',
+    demoUrl: 'https://rizalmanthovani.com',
+    repoUrl: 'https://github.com/rizalmanthovani/portfolio',
+    image: '/images/project3.jpg',
+    featured: true,
+  },
+];

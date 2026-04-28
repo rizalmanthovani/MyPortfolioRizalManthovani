@@ -1,0 +1,16 @@
+/* styles/variables.css */
+:root {
+  --color-primary: #0a84ff; /* teal‑blue */
+  --color-primary-dark: #0066cc;
+  --color-secondary: #5c6ac4; /* indigo */
+  --color-secondary-dark: #4751a5;
+  --color-bg: #ffffff;
+  --color-bg-light: #fafafa;
+  --color-muted: #555555;
+  --color-bg-dark: #111111;
+}
+html.dark {
+  --color-bg: var(--color-bg-dark);
+  --color-bg-light: #1a1a1a;
+  --color-muted: #bbbbbb;
+}
