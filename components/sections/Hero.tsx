@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import { contacts } from '@/data/contacts';
 import styles from './Hero.module.css';
@@ -12,16 +11,7 @@ export default function Hero() {
       {/* Grid overlay */}
       <div className={styles.heroGrid} aria-hidden="true" />
 
-      {/* Background image */}
-      <div className={styles.bg} aria-hidden="true">
-        <Image
-          src="/images/hero-bg.jpg"
-          alt=""
-          fill
-          priority
-          style={{ objectFit: 'cover' }}
-        />
-      </div>
+      {/* bg div removed — gradient handled by CSS */}
 
       {/* Content */}
       <div className={styles.content}>
@@ -48,16 +38,14 @@ export default function Hero() {
           <Link href="#projects" className={styles.btnPrimary}>
             🚀 Lihat Proyek
           </Link>
-          {resume && (
-            <Link
-              href={resume.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.btnOutline}
-            >
-              📄 Download Resume
-            </Link>
-          )}
+          <Link
+            href="https://github.com/rizalmanthovani"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.btnOutline}
+          >
+            📄 Resume
+          </Link>
           {github && (
             <Link
               href={github.href}
