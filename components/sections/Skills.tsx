@@ -4,22 +4,22 @@ const skillCategories = [
   {
     icon: '⚛️',
     title: 'Frontend',
-    skills: ['React', 'Next.js', 'TypeScript', 'CSS Modules', 'Framer Motion', 'Tailwind CSS'],
+    skills: ['React', 'Next.js', 'TypeScript', 'CSS Modules', 'Tailwind CSS'],
   },
   {
     icon: '🔧',
     title: 'Backend',
-    skills: ['Node.js', 'Express.js', 'REST API', 'tRPC', 'Prisma', 'Drizzle ORM'],
+    skills: ['Node.js', 'Express.js', 'REST API', 'Golang'],
   },
   {
     icon: '🗄️',
     title: 'Database & Cloud',
-    skills: ['PostgreSQL', 'Supabase', 'MongoDB', 'Redis', 'Vercel', 'Railway'],
+    skills: ['PostgreSQL', 'Supabase', 'Vercel', 'Railway', 'VPS'],
   },
   {
     icon: '🛠️',
     title: 'Tools & Workflow',
-    skills: ['Git & GitHub', 'Docker', 'Jest', 'Cypress', 'Figma', 'Postman'],
+    skills: ['Git & GitHub', 'Docker', 'n8n', 'Coolify'],
   },
 ];
 

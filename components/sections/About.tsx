@@ -52,7 +52,7 @@ export default function About() {
             <div className={styles.infoCard}>
               <div className={styles.infoCardIcon}>🎓</div>
               <div className={styles.infoCardLabel}>Pendidikan</div>
-              <div className={styles.infoCardValue}>S1 Informatika</div>
+              <div className={styles.infoCardValue}>SMK Teknik Permesinan</div>
             </div>
             <div className={styles.infoCard}>
               <div className={styles.infoCardIcon}>🌐</div>
