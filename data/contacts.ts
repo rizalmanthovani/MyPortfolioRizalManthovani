@@ -9,7 +9,7 @@ export const contacts: Contact[] = [
   {
     type: 'email',
     label: 'Email',
-    href: 'mailto:rizal@example.com',
+    href: 'manthovanir24@gmail.com',
   },
   {
     type: 'linkedin',
